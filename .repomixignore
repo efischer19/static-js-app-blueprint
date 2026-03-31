@@ -1,5 +1,5 @@
 # ==========================================
-# {{PROJECT_NAME}} - .repomixignore
+# static-js-app-blueprint - .repomixignore
 # ==========================================
 
 # 1. Community & Boilerplate Files
@@ -25,9 +25,11 @@ docs-requirements.txt
 **/*.csv
 **/*.json
 
-# 4. Templates
-# (No need to analyze empty scaffolding)
-templates/
+# 4. Frontend build artifacts & dependencies
+node_modules/
+dist/
+build/
+package-lock.json
 
 # 5. Lockfiles & Local Env (usually caught by .gitignore, but good to enforce)
 poetry.lock

@@ -1,4 +1,4 @@
-# Pre-commit hooks configuration for blueprint-repo-blueprints
+# Pre-commit hooks configuration for static-js-app-blueprint
 #
 # To use pre-commit hooks:
 # 1. Install pre-commit: pip install pre-commit
