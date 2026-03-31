@@ -1,16 +1,18 @@
-# blueprint-repo-blueprints
+# static-js-app-blueprint
 
-> The language-agnostic grandparent template from which all other blueprint repos are derived.
+> A template repository for building static frontend applications with HTML, CSS, and JavaScript.
 
 ## What Is This?
 
-This is a **GitHub template repository** that provides the foundational directory structure, documentation, and configuration shared by all downstream blueprint repositories. It contains no language-specific content — only the universal scaffolding that every project needs.
+This is a **GitHub template repository** that provides the foundational directory structure, documentation, and configuration for static frontend web applications. It is framework-agnostic — the default example uses vanilla HTML/CSS/JS, but the structure accommodates any static build output (React, Vue, Svelte, etc.).
+
+This template is derived from the [blueprint-repo-blueprints](https://github.com/efischer19/blueprint-repo-blueprints) grandparent template, which provides universal scaffolding for documentation, ADRs, and developer tooling.
 
 ## How to Use This Template
 
 1. Click the **"Use this template"** button at the top of the repository page on GitHub.
-2. Choose a name for your new repository (e.g., `blueprint-python`, `blueprint-node`).
-3. Clone your new repository and begin adding language-specific content.
+2. Choose a name for your new repository.
+3. Clone your new repository and begin building your frontend application in the `src/` directory.
 
 For more details on GitHub template repositories, see the [official documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
 
@@ -18,14 +20,18 @@ For more details on GitHub template repositories, see the [official documentatio
 
 | Path | Purpose |
 | :--- | :--- |
+| `src/` | Frontend source files — `index.html`, `style.css`, `script.js` |
 | `meta/adr/` | Architecture Decision Records — the logbook of *why* decisions were made |
 | `meta/plans/` | Project plans and roadmaps |
 | `docs-src/` | Source files for generated documentation (e.g., MkDocs) |
 | `scripts/` | Utility and automation scripts |
-| `.github/` | GitHub-specific configuration (issue templates, PR templates) |
+| `.github/` | GitHub-specific configuration (issue templates, PR templates, Copilot instructions) |
 
 ### Key Files
 
+- **`src/index.html`** — Starter page with semantic HTML and basic accessibility attributes
+- **`src/style.css`** — Minimal stylesheet with CSS custom properties
+- **`src/script.js`** — JavaScript entry point
 - **`LICENSE.md`** — MIT License
 - **`CODE_OF_CONDUCT.md`** — Contributor Covenant Code of Conduct
 - **`SECURITY.md`** — Security policy and vulnerability reporting
@@ -58,7 +64,29 @@ Search the repository for the following placeholders and replace them with value
 - **`meta/DEVELOPMENT_PHILOSOPHY.md`** — Review and adjust principles to fit your project's needs.
 - **`SECURITY.md`** — Update contact information for vulnerability reporting.
 
-### 3. Set Up Local Development
+### 3. Preview the Starter Page
+
+Open `src/index.html` directly in a browser — no build step or dev server required.
+
+### 4. Build Your Application
+
+Edit files in `src/` to build your frontend application:
+
+- **`src/index.html`** — Add your HTML content with semantic markup
+- **`src/style.css`** — Add your styles
+- **`src/script.js`** — Add your JavaScript logic
+
+### 5. Adding a Build Step (Optional)
+
+The default setup requires no build step. If you need a bundler (e.g., for JSX, TypeScript, or module bundling), add your configuration at the project root:
+
+- **Vite**: `npm create vite@latest . -- --template vanilla` and point `root` to `src/`
+- **Webpack**: Add `webpack.config.js` at the project root
+- **Parcel**: Run `npx parcel src/index.html`
+
+Document your choice in a new ADR (see `meta/adr/TEMPLATE.md`).
+
+### 6. Set Up Local Development
 
 ```bash
 # Install pre-commit hooks
@@ -73,13 +101,15 @@ pip install -r docs-requirements.txt
 ./scripts/build-docs.sh
 ```
 
-### 4. Verify CI
+### 7. Verify CI
 
 Push a change or open a pull request to confirm the CI workflow runs and passes in your new repository.
 
 ## Design Principles
 
-- **Minimal by design.** Downstream blueprints add language-specific tooling, CI/CD, and dependencies.
+- **Framework-agnostic.** The default is vanilla HTML/CSS/JS, but the structure supports any frontend framework or build tool.
+- **No build step required.** Open `src/index.html` in a browser and start building.
+- **Minimal by design.** Only universal scaffolding is included — add tools and dependencies as needed.
 - **Documentation-first.** Every significant decision is captured in an ADR.
 - **AI-friendly.** The structure and conventions are designed to work well with AI-assisted development workflows.
 

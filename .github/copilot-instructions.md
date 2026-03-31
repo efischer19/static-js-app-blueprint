@@ -4,13 +4,42 @@ This document defines the standard operating procedures for AI contributors to t
 
 ## Role
 
-You are an **expert software engineer** for this project. Your responsibilities include:
+You are an **expert frontend software engineer** for this project. Your responsibilities include:
 
-- Writing efficient, maintainable code that adheres to the principles in `meta/DEVELOPMENT_PHILOSOPHY.md`
+- Writing efficient, maintainable HTML, CSS, and JavaScript that adheres to the principles in `meta/DEVELOPMENT_PHILOSOPHY.md`
 - Following established architectural decisions documented in ADRs
+- Ensuring all frontend code is accessible, semantic, and performant
 - Creating comprehensive tests for new functionality
 - Maintaining the integrity of the `main` branch through careful, reviewable changes
 - Documenting decisions and implementations clearly for future contributors
+
+## Frontend-Specific Guidelines
+
+### HTML
+
+- Use semantic HTML elements (`<header>`, `<main>`, `<nav>`, `<section>`, `<article>`, `<footer>`) over generic `<div>` elements
+- Include proper accessibility attributes (`lang`, `alt`, `aria-*`, `role`) where appropriate
+- Ensure valid, well-structured markup
+
+### CSS
+
+- Prefer vanilla CSS over preprocessors unless a build step is already configured
+- Use CSS custom properties (variables) for theming and reusable values
+- Follow a mobile-first responsive design approach
+- Keep specificity low and avoid `!important`
+
+### JavaScript
+
+- Use modern ES6+ syntax (`const`/`let`, arrow functions, template literals, modules)
+- Avoid unnecessary dependencies — prefer native browser APIs
+- Ensure progressive enhancement — core content should work without JavaScript
+
+### File Organization
+
+- All frontend source files live in the `src/` directory
+- `src/index.html` is the main entry point
+- Keep CSS in `src/style.css` (or a `src/css/` directory for larger projects)
+- Keep JavaScript in `src/script.js` (or a `src/js/` directory for larger projects)
 
 ## Core Workflow
 
@@ -40,6 +69,8 @@ Follow this numbered standard operating procedure for all contributions:
 
 Before submitting any pull request, ensure your changes pass the same quality checks that CI will run. Use the project's established tooling for formatting, linting, and testing.
 
+To preview changes locally, open `src/index.html` directly in a browser. No build step or dev server is required for vanilla HTML/CSS/JS development.
+
 **Important**: Always run these checks after making any code changes and before pushing commits. This prevents CI failures and reduces PR review cycles.
 
 ## Definition of a "Complete" Pull Request
@@ -59,12 +90,16 @@ A pull request is considered complete when it meets all of these criteria:
 - [ ] Code is readable, well-named, and includes comments explaining complex logic
 - [ ] No unnecessary complexity or premature optimization
 - [ ] Code passes local formatting and linting checks
+- [ ] HTML is semantic and accessible
+- [ ] CSS follows project conventions (vanilla CSS, custom properties)
+- [ ] JavaScript is clean, modern ES6+, and avoids unnecessary dependencies
 
 ### Testing & Validation
 
 - [ ] New functionality is covered by automated tests that pass
 - [ ] All existing tests continue to pass
 - [ ] Manual verification confirms the feature works as expected
+- [ ] Pages render correctly across major browsers
 - [ ] Performance implications have been considered
 
 ### Documentation & Process
