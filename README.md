@@ -56,11 +56,19 @@ Search the repository for the following placeholders and replace them with value
 | `{{CATEGORY_NAME}}` | Feature category (in `docs-src/feature-request-automation.md`) | `data-pipeline` |
 | `{{PROJECT_URL}}` | Public URL for your project (in `meta/ROBOT_ETHICS.md`) | `https://example.com` |
 
-### 2. Preview the Starter Page
+### 2. Customize Key Files
+
+- **`README.md`** — Replace this content with your project's description.
+- **`mkdocs.yml`** — Update site name, description, and URL after replacing placeholders.
+- **`docs-src/index.md`** — Replace the placeholder setup instructions with your own.
+- **`meta/DEVELOPMENT_PHILOSOPHY.md`** — Review and adjust principles to fit your project's needs.
+- **`SECURITY.md`** — Update contact information for vulnerability reporting.
+
+### 3. Preview the Starter Page
 
 Open `src/index.html` directly in a browser — no build step or dev server required.
 
-### 3. Build Your Application
+### 4. Build Your Application
 
 Edit files in `src/` to build your frontend application:
 
@@ -68,7 +76,7 @@ Edit files in `src/` to build your frontend application:
 - **`src/style.css`** — Add your styles
 - **`src/script.js`** — Add your JavaScript logic
 
-### 4. Adding a Build Step (Optional)
+### 5. Adding a Build Step (Optional)
 
 The default setup requires no build step. If you need a bundler (e.g., for JSX, TypeScript, or module bundling), add your configuration at the project root:
 
@@ -78,7 +86,7 @@ The default setup requires no build step. If you need a bundler (e.g., for JSX, 
 
 Document your choice in a new ADR (see `meta/adr/TEMPLATE.md`).
 
-### 5. Set Up Local Development
+### 6. Set Up Local Development
 
 ```bash
 # Install pre-commit hooks
@@ -93,7 +101,7 @@ pip install -r docs-requirements.txt
 ./scripts/build-docs.sh
 ```
 
-### 6. Verify CI
+### 7. Verify CI
 
 Push a change or open a pull request to confirm the CI workflow runs and passes in your new repository.
 
