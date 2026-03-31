@@ -12,7 +12,7 @@ This project is a template repository. Security updates will only be applied to 
 
 We take the security of this project seriously. If you discover a security vulnerability, please report it to us privately. **Do not report security vulnerabilities through public GitHub issues.**
 
-The best way to report a vulnerability is through GitHub's [private vulnerability reporting feature](https://github.com/efischer19/static-js-app-blueprint/security/advisories/new).
+The best way to report a vulnerability is through GitHub's [private vulnerability reporting feature](https://github.com/efischer19/blueprint-repo-blueprints/security/advisories/new).
 
 When submitting your report, please include the following details:
 

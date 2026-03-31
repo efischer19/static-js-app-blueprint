@@ -31,22 +31,36 @@ For more details on GitHub template repositories, see the [official documentatio
 
 - **`src/index.html`** — Starter page with semantic HTML and basic accessibility attributes
 - **`src/style.css`** — Minimal stylesheet with CSS custom properties
-- **`src/script.js`** — JavaScript entry point with example DOM interaction
+- **`src/script.js`** — JavaScript entry point
 - **`LICENSE.md`** — MIT License
 - **`CODE_OF_CONDUCT.md`** — Contributor Covenant Code of Conduct
 - **`SECURITY.md`** — Security policy and vulnerability reporting
 - **`CONTRIBUTING.md`** — Guidelines for contributing to the project
-- **`meta/adr/ADR-002-vanilla-html-css-js.md`** — Framework selection rationale (vanilla HTML/CSS/JS)
+- **`meta/adr/TEMPLATE.md`** — Template for new Architecture Decision Records
+- **`meta/adr/ADR-001-use_adrs.md`** — The founding ADR: use ADRs to document decisions
 
 ## Getting Started
 
 After creating a new repository from this template:
 
-### 1. Preview the Starter Page
+### 1. Replace Template Placeholders
+
+Search the repository for the following placeholders and replace them with values appropriate for your project:
+
+| Placeholder | Description | Example |
+| :--- | :--- | :--- |
+| `{{PROJECT_NAME}}` | Your repository / project name | `my-awesome-project` |
+| `{{GITHUB_OWNER}}` | GitHub username or organization | `my-org` |
+| `{{APP_NAME}}` | Application directory name (in `templates/readme/apps.md`) | `web-app` |
+| `{{LIB_NAME}}` | Library directory name (in `templates/readme/libs.md`) | `core-utils` |
+| `{{CATEGORY_NAME}}` | Feature category (in `docs-src/feature-request-automation.md`) | `data-pipeline` |
+| `{{PROJECT_URL}}` | Public URL for your project (in `meta/ROBOT_ETHICS.md`) | `https://example.com` |
+
+### 2. Preview the Starter Page
 
 Open `src/index.html` directly in a browser — no build step or dev server required.
 
-### 2. Build Your Application
+### 3. Build Your Application
 
 Edit files in `src/` to build your frontend application:
 
@@ -54,7 +68,7 @@ Edit files in `src/` to build your frontend application:
 - **`src/style.css`** — Add your styles
 - **`src/script.js`** — Add your JavaScript logic
 
-### 3. Adding a Build Step (Optional)
+### 4. Adding a Build Step (Optional)
 
 The default setup requires no build step. If you need a bundler (e.g., for JSX, TypeScript, or module bundling), add your configuration at the project root:
 
@@ -64,7 +78,7 @@ The default setup requires no build step. If you need a bundler (e.g., for JSX, 
 
 Document your choice in a new ADR (see `meta/adr/TEMPLATE.md`).
 
-### 4. Set Up Local Development
+### 5. Set Up Local Development
 
 ```bash
 # Install pre-commit hooks
@@ -79,7 +93,7 @@ pip install -r docs-requirements.txt
 ./scripts/build-docs.sh
 ```
 
-### 5. Verify CI
+### 6. Verify CI
 
 Push a change or open a pull request to confirm the CI workflow runs and passes in your new repository.
 

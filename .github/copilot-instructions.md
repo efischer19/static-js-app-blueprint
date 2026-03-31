@@ -1,6 +1,6 @@
 # AI Contributor Guide
 
-This document defines the standard operating procedures for AI contributors to the `static-js-app-blueprint` project. Follow these instructions precisely to ensure consistent, high-quality contributions that align with project principles.
+This document defines the standard operating procedures for AI contributors to the `{{PROJECT_NAME}}` project. Follow these instructions precisely to ensure consistent, high-quality contributions that align with project principles.
 
 ## Role
 
@@ -30,7 +30,6 @@ You are an **expert frontend software engineer** for this project. Your responsi
 
 ### JavaScript
 
-- Write vanilla JavaScript by default (see ADR-002 for framework selection rationale)
 - Use modern ES6+ syntax (`const`/`let`, arrow functions, template literals, modules)
 - Avoid unnecessary dependencies — prefer native browser APIs
 - Ensure progressive enhancement — core content should work without JavaScript

@@ -4,7 +4,7 @@ set -e
 # Build Documentation Script
 # Generates the static documentation site using MkDocs
 
-echo "📚 Building static-js-app-blueprint Documentation"
+echo "📚 Building {{PROJECT_NAME}} Documentation"
 echo "========================================================"
 
 # Change to repository root
