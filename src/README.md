@@ -61,10 +61,10 @@ src/
 
 ### Keyboard Navigation Test
 
-1. Press <kbd>Tab</kbd> to move through all interactive elements.
-2. Verify the **skip-to-content** link appears on first <kbd>Tab</kbd> press.
+1. Press `Tab` to move through all interactive elements.
+2. Verify the **skip-to-content** link appears on first `Tab` press.
 3. Confirm all buttons and links are reachable and operable with
-   <kbd>Enter</kbd> or <kbd>Space</kbd>.
+   `Enter` or `Space`.
 4. Check that focus indicators are clearly visible.
 
 ### Color Contrast Verification
@@ -78,7 +78,7 @@ Use one of these tools to verify WCAG 2.1 AA compliance (4.5:1 for normal text,
 
 ### Screen Reader Testing
 
-- **macOS**: VoiceOver (built in) — press <kbd>Cmd+F5</kbd> to toggle
+- **macOS**: VoiceOver (built in) — press `Cmd+F5` to toggle
 - **Windows**: NVDA (free) — [download](https://www.nvda-project.org/)
 - **Cross-platform**: Browser extensions like axe DevTools or WAVE
 
