@@ -107,6 +107,17 @@ pip install -r docs-requirements.txt
 
 Push a change or open a pull request to confirm the CI workflow runs and passes in your new repository.
 
+### 8. Enable GitHub Pages Deployment
+
+This template includes `.github/workflows/deploy-pages.yml`, which deploys `src/` to GitHub Pages on pushes to `main` and supports manual `workflow_dispatch`.
+
+To enable it in your new repository:
+
+1. Go to **Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. (Optional but recommended) In **Settings → Environments → github-pages**, configure environment protection rules as needed
+4. Push to `main` (or run the **Deploy to GitHub Pages** workflow manually) to publish your site
+
 ## Design Principles
 
 - **Framework-agnostic.** The default is vanilla HTML/CSS/JS, but the structure supports any frontend framework or build tool.
