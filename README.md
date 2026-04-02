@@ -20,7 +20,7 @@ For more details on GitHub template repositories, see the [official documentatio
 
 | Path | Purpose |
 | :--- | :--- |
-| `src/` | Frontend source files — `index.html`, `style.css`, `script.js` |
+| `src/` | Frontend source files — `index.html`, `assets/`, `scripts/` |
 | `meta/adr/` | Architecture Decision Records — the logbook of *why* decisions were made |
 | `meta/plans/` | Project plans and roadmaps |
 | `docs-src/` | Source files for generated documentation (e.g., MkDocs) |
@@ -29,9 +29,11 @@ For more details on GitHub template repositories, see the [official documentatio
 
 ### Key Files
 
-- **`src/index.html`** — Starter page with semantic HTML and basic accessibility attributes
-- **`src/style.css`** — Minimal stylesheet with CSS custom properties
-- **`src/script.js`** — JavaScript entry point
+- **`src/index.html`** — Starter page with semantic HTML and accessibility best practices
+- **`src/assets/styles.css`** — Responsive stylesheet with CSS custom properties and dark mode
+- **`src/scripts/app.js`** — JavaScript entry point with accessible theme toggle
+- **`src/assets/favicon.svg`** — Placeholder favicon
+- **`src/README.md`** — Documents the `src/` file structure and conventions
 - **`LICENSE.md`** — MIT License
 - **`CODE_OF_CONDUCT.md`** — Contributor Covenant Code of Conduct
 - **`SECURITY.md`** — Security policy and vulnerability reporting
@@ -73,8 +75,8 @@ Open `src/index.html` directly in a browser — no build step or dev server requ
 Edit files in `src/` to build your frontend application:
 
 - **`src/index.html`** — Add your HTML content with semantic markup
-- **`src/style.css`** — Add your styles
-- **`src/script.js`** — Add your JavaScript logic
+- **`src/assets/styles.css`** — Add your styles
+- **`src/scripts/app.js`** — Add your JavaScript logic
 
 ### 5. Adding a Build Step (Optional)
 

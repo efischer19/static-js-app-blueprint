@@ -12,8 +12,8 @@ documentation, architecture decision records, and developer tooling.
 ## Getting Started
 
 1. **Open `src/index.html`** in a browser to see the starter page.
-2. **Edit files in `src/`** — Modify `index.html`, `style.css`, and `script.js`
-   to build your application.
+2. **Edit files in `src/`** — Modify `index.html`, `assets/styles.css`, and
+   `scripts/app.js` to build your application.
 
 ## Project Structure
 
@@ -21,8 +21,12 @@ documentation, architecture decision records, and developer tooling.
 {{PROJECT_NAME}}/
 ├── src/              # Frontend source files
 │   ├── index.html    # Entry point with semantic HTML
-│   ├── style.css     # Stylesheet
-│   └── script.js     # JavaScript entry point
+│   ├── assets/
+│   │   ├── styles.css    # Stylesheet with CSS custom properties
+│   │   └── favicon.svg   # Placeholder favicon
+│   ├── scripts/
+│   │   └── app.js        # JavaScript entry point
+│   └── README.md         # Documents src/ structure and conventions
 ├── meta/             # Development philosophy, ADRs, and plans
 ├── docs-src/         # Documentation source files (MkDocs)
 ├── scripts/          # Utility and automation scripts

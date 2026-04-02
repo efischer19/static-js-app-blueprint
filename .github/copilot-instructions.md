@@ -38,8 +38,8 @@ You are an **expert frontend software engineer** for this project. Your responsi
 
 - All frontend source files live in the `src/` directory
 - `src/index.html` is the main entry point
-- Keep CSS in `src/style.css` (or a `src/css/` directory for larger projects)
-- Keep JavaScript in `src/script.js` (or a `src/js/` directory for larger projects)
+- Keep CSS in `src/assets/styles.css` (or a `src/assets/` directory for larger projects)
+- Keep JavaScript in `src/scripts/app.js` (or a `src/scripts/` directory for larger projects)
 
 ## Core Workflow
 
