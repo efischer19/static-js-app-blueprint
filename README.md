@@ -118,6 +118,48 @@ To enable it in your new repository:
 3. (Optional but recommended) In **Settings → Environments → github-pages**, configure environment protection rules as needed
 4. Push to `main` (or run the **Deploy to GitHub Pages** workflow manually) to publish your site
 
+### 9. Opting into AWS Deployment
+
+This template includes an optional `.github/workflows/deploy-aws.yml` workflow that deploys `src/` to an AWS S3 bucket and invalidates a CloudFront distribution. It is **disabled by default** — it only runs when triggered manually via `workflow_dispatch`. If you use a build step, update the sync source path in the workflow (see the commented build step instructions inside the file).
+
+#### Required AWS Resources
+
+Before enabling this workflow, you need the following AWS resources already provisioned (infrastructure setup is out of scope for this template):
+
+| Resource | Description |
+| :--- | :--- |
+| **S3 bucket** | Stores the static site files |
+| **CloudFront distribution** | Serves the site from S3 with HTTPS and caching |
+| **GitHub OIDC identity provider** | Allows GitHub Actions to authenticate with AWS without static keys |
+| **IAM role** | Trusted by the OIDC provider; grants permission to write to S3 and invalidate CloudFront |
+
+#### GitHub Repository Variables
+
+Configure the following in **Settings → Secrets and variables → Actions → Variables**:
+
+| Variable | Description | Example |
+| :--- | :--- | :--- |
+| `AWS_ROLE_ARN` | ARN of the IAM role GitHub Actions will assume via OIDC | `arn:aws:iam::123456789012:role/my-deploy-role` |
+| `AWS_REGION` | AWS region where your resources live (defaults to `us-east-1` if unset) | `us-west-2` |
+| `S3_BUCKET_NAME` | Name of the S3 bucket to sync the site into | `my-project-static-site` |
+| `CLOUDFRONT_DISTRIBUTION_ID` | ID of the CloudFront distribution to invalidate after deploy | `E1ABCDEF2GHIJK` |
+
+#### Enabling the Workflow
+
+1. Provision the AWS resources listed above.
+2. Add the three repository variables listed above in **Settings → Secrets and variables → Actions → Variables**.
+3. Go to **Actions → Deploy to AWS (S3 + CloudFront)** and click **Run workflow** to trigger a manual deployment.
+4. (Optional) To deploy automatically on every push to `main`, add a `push` trigger to `.github/workflows/deploy-aws.yml`:
+
+   ```yaml
+   on:
+     push:
+       branches: [main]
+     workflow_dispatch: {}
+   ```
+
+> **Note:** The GitHub Pages workflow (`.github/workflows/deploy-pages.yml`) remains the default deployment path and is unaffected by this workflow.
+
 ## Design Principles
 
 - **Framework-agnostic.** The default is vanilla HTML/CSS/JS, but the structure supports any frontend framework or build tool.
